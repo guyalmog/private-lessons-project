@@ -1,19 +1,26 @@
 //const  db = firebase.database().ref();
 
 
+$("#edit_teacher_profile").on("click",function(){
+  window.location = "../teacher_page/teacher.html";
+});
 
-/* firebase.auth().onAuthStateChanged(firebaseUser => {
-  if(!firebaseUser)
-     window.location = "../login/index.html";
 
-  else
-    console.log("this line shoud be executed once for each login");
+var userID;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (!user) {
 
-}) */
+       window.location = "../login/index.html";
+    } else {
+      userID = user.uid;
+      console.log("this line shoud be executed once for each login");
+    }
+});
 
-/* $("#logout_btn").on("click",function(){
+
+ $("#logout_btn").on("click",function(){
   firebase.auth().signOut();
-}); */
+});
 
 
 const
@@ -32,7 +39,7 @@ range.addEventListener('input', setValue);
 
  $("#searchBtn").on("click",function(){
 
-  
+
   var delveryMethod = $("#ddl_language").children("option:selected").val();
   console.log(delveryMethod);
 
@@ -47,11 +54,11 @@ range.addEventListener('input', setValue);
   ref.orderByChild("height").limitToFirst(2).on("child_added", function(snapshot) {
     // This will be called exactly two times (unless there are less than two
     // dinosaurs in the Database).
-  
+
     // It will also get fired again if one of the first two dinosaurs is
     // removed from the data set, as a new dinosaur will now be the second
     // shortest.
     console.log(snapshot.key);
   });
   */
-}); 
+});
