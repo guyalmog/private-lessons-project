@@ -89,19 +89,3 @@ firebase.auth().onAuthStateChanged(function(user) {
 // ---- Firebase function ------
 
 //###################################################
-
-
-
-//----On click function for Submit Button
-// $("#Add_btn").on("click",function(){
-//   console.log("aaaaaaaaaaaaaaa");
-//
-//
-//    db.child("Users/Students/avishay2@gmail*com").set({
-//       name: "avishay ophir2",
-//       age: 29
-//    }).catch(function(error){
-//      console.log("Error ocurred: ", error);
-//    });
-//
-// });
